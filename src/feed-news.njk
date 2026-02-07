@@ -1,0 +1,29 @@
+---json
+{
+  "permalink": "/feed/news.xml",
+  "eleventyExcludeFromCollections": true
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }} — News</title>
+  <subtitle>News coverage from {{ site.title }}</subtitle>
+  <link href="{{ site.url }}/feed/news.xml" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{% if collections.news.length > 0 %}{{ collections.news | rssLastUpdatedDate }}{% endif %}</updated>
+  <id>{{ site.url }}/feed/news/</id>
+  <author>
+    <name>{{ site.author }}</name>
+    <email>{{ site.email }}</email>
+  </author>
+  {%- for article in collections.news | limit(20) %}
+  <entry>
+    <title>{{ article.data.title }}</title>
+    <link href="{{ site.url }}{{ article.url }}"/>
+    <updated>{{ article.date | rssDate }}</updated>
+    <id>{{ site.url }}{{ article.url }}</id>
+    <category term="News"/>
+    <content type="html">{{ article.templateContent | htmlToAbsoluteUrls(site.url + article.url) | emailSafe }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

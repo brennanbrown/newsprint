@@ -1,0 +1,29 @@
+---json
+{
+  "permalink": "/feed/opinion.xml",
+  "eleventyExcludeFromCollections": true
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title }} — Opinion</title>
+  <subtitle>Opinion and commentary from {{ site.title }}</subtitle>
+  <link href="{{ site.url }}/feed/opinion.xml" rel="self"/>
+  <link href="{{ site.url }}"/>
+  <updated>{% if collections.opinion.length > 0 %}{{ collections.opinion | rssLastUpdatedDate }}{% endif %}</updated>
+  <id>{{ site.url }}/feed/opinion/</id>
+  <author>
+    <name>{{ site.author }}</name>
+    <email>{{ site.email }}</email>
+  </author>
+  {%- for article in collections.opinion | limit(20) %}
+  <entry>
+    <title>{{ article.data.title }}</title>
+    <link href="{{ site.url }}{{ article.url }}"/>
+    <updated>{{ article.date | rssDate }}</updated>
+    <id>{{ site.url }}{{ article.url }}</id>
+    <category term="Opinion"/>
+    <content type="html">{{ article.templateContent | htmlToAbsoluteUrls(site.url + article.url) | emailSafe }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

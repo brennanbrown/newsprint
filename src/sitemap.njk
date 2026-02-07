@@ -1,0 +1,32 @@
+---json
+{
+  "permalink": "/sitemap.xml",
+  "eleventyExcludeFromCollections": true
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>{{ site.url }}/archive/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  {%- for article in collections.articles %}
+  <url>
+    <loc>{{ site.url }}{{ article.url }}</loc>
+    <lastmod>{{ article.date | dateISO }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  {%- endfor %}
+</urlset>
