@@ -1,0 +1,24 @@
+<div class="masthead">
+  <div class="masthead__top">
+    <div class="masthead__weather">
+      <span class="masthead__established">Est. {{ site.masthead.established }}</span>
+    </div>
+    <div class="masthead__title-wrap">
+      <a href="/" class="masthead__title">{{ site.title }}</a>
+    </div>
+    <div class="masthead__meta">
+      <a href="/feed.xml" class="masthead__rss" aria-label="RSS Feed">&#9741; RSS</a>
+    </div>
+  </div>
+  <div class="masthead__tagline">{{ site.masthead.tagline }}</div>
+  <div class="masthead__date" id="current-date"></div>
+  <nav class="masthead__nav" aria-label="Main navigation">
+    <ul class="masthead__nav-list">
+      {% for item in navigation %}
+      <li class="masthead__nav-item">
+        <a href="{{ item.url }}" class="masthead__nav-link{% if page.url == item.url %} masthead__nav-link--active{% endif %}">{{ item.label }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>

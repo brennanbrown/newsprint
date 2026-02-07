@@ -1,0 +1,33 @@
+<footer class="site-footer">
+  <div class="site-footer__rule"></div>
+  <div class="site-footer__content">
+    <div class="site-footer__col">
+      <h4 class="site-footer__heading">{{ site.title }}</h4>
+      <p class="site-footer__text">{{ site.description }}</p>
+    </div>
+    <div class="site-footer__col">
+      <h4 class="site-footer__heading">Sections</h4>
+      <ul class="site-footer__list">
+        {% for item in navigation %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="site-footer__col">
+      <h4 class="site-footer__heading">Subscribe</h4>
+      <p class="site-footer__text">Get the latest delivered to your inbox.</p>
+      <div class="newsletter-signup">
+        <form class="newsletter-signup__form" action="#" method="post">
+          <input type="email" class="newsletter-signup__input" placeholder="your@email.com" aria-label="Email address" required>
+          <button type="submit" class="newsletter-signup__button">Subscribe</button>
+        </form>
+      </div>
+      <p class="site-footer__text site-footer__rss">
+        <a href="/feed.xml">&#9741; RSS Feed</a>
+      </p>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <p>&copy; {{ site.copyright }} | Built with 11ty and Newsreader variable font | Inspired by the golden age of newspaper design</p>
+  </div>
+</footer>

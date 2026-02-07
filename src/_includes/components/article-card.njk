@@ -1,0 +1,23 @@
+<article class="article-card{% if featured %} article-card--featured{% endif %}">
+  {% if image %}
+  <a href="{{ url }}" class="article-card__image-link">
+    <img src="{{ image }}" alt="{{ imageCaption or title }}" class="article-card__image" loading="lazy">
+  </a>
+  {% endif %}
+  <div class="article-card__content">
+    {% if category %}
+    <span class="article-card__category">{{ category }}</span>
+    {% endif %}
+    <h3 class="article-card__title">
+      <a href="{{ url }}">{{ title }}</a>
+    </h3>
+    {% if subtitle %}
+    <p class="article-card__subtitle">{{ subtitle }}</p>
+    {% endif %}
+    <p class="article-card__excerpt">{{ excerpt or (content | excerpt) }}</p>
+    <div class="article-card__meta">
+      {% if author %}<span class="article-card__author">By {{ author }}</span>{% endif %}
+      {% if date %}<time class="article-card__date" datetime="{{ date | dateISO }}">{{ date | dateShort }}</time>{% endif %}
+    </div>
+  </div>
+</article>

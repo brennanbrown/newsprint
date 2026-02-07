@@ -1,0 +1,34 @@
+<aside class="sidebar" aria-label="Sidebar">
+  <div class="sidebar__section">
+    <h4 class="sidebar__heading">In This Issue</h4>
+    <ul class="sidebar__list">
+      {% for article in collections.articles | limit(5) %}
+      <li class="sidebar__item">
+        <a href="{{ article.url }}" class="sidebar__link">{{ article.data.title }}</a>
+        {% if article.data.category %}
+        <span class="sidebar__category">{{ article.data.category }}</span>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="sidebar__section">
+    <h4 class="sidebar__heading">Subscribe</h4>
+    <p class="sidebar__text">Get every edition delivered directly to your inbox.</p>
+    <form class="sidebar__form" action="#" method="post">
+      <input type="email" class="sidebar__input" placeholder="your@email.com" aria-label="Email address" required>
+      <button type="submit" class="sidebar__button">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="sidebar__section">
+    <h4 class="sidebar__heading">Feeds</h4>
+    <ul class="sidebar__list">
+      <li class="sidebar__item"><a href="/feed.xml" class="sidebar__link">&#9741; All Articles</a></li>
+      <li class="sidebar__item"><a href="/feed/news.xml" class="sidebar__link">&#9741; News</a></li>
+      <li class="sidebar__item"><a href="/feed/opinion.xml" class="sidebar__link">&#9741; Opinion</a></li>
+      <li class="sidebar__item"><a href="/feed/features.xml" class="sidebar__link">&#9741; Features</a></li>
+    </ul>
+  </div>
+</aside>
