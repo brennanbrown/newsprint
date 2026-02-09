@@ -1,12 +1,18 @@
 {
-  "title": "The Daily Chronicle",
+  "title": "The Newsprint Theme",
   "description": "Newsprint is a modern 11ty theme meant for publications embracing classic newspaper typography, multi-column layouts, and the timeless design of print journalism in digital form. Our design draws inspiration from the golden age of newspaper publishing, featuring Newsreader variable typeface with optical sizing, justified text with proper hyphenation, drop caps, pull quotes, and ruled lines echoing the craftsmanship of traditional broadsheet journalism.",
-  "url": "https://dailychronicle.com",
+  "url": "https://newsprint.netlify.app",
   "author": "Editorial Team",
-  "email": "editor@dailychronicle.com",
+  "email": "editor@brennanbrown.ca",
+  "donationUrl": "https://ko-fi.com/brennan",
+  "social": {
+    "mastodon": "https://social.lol/@brennan",
+    "threads": "https://threads.com/brennankbrown",
+    "bluesky": "https://bsky.app/profile/brennanbrown.ca"
+  },
   "masthead": {
-    "tagline": "All the News That's Fit to Ship",
+    "tagline": "All the News That's Fit to Ship!",
     "established": "2026"
   },
-  "copyright": "2026 The Daily Chronicle. All rights reserved."
+  "copyright": "© 2026 Code is MIT and content is CC BY-SA"
 }

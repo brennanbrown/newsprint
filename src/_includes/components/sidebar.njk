@@ -23,6 +23,26 @@
   </div>
 
   <div class="sidebar__section">
+    <h4 class="sidebar__heading">Follow Us</h4>
+    <p class="sidebar__text">Follow {{ site.title }} on social media for updates and behind-the-scenes content.</p>
+    {% if site.social.mastodon %}
+    <a href="{{ site.social.mastodon }}" class="sidebar__social-link" aria-label="Follow on Mastodon">Mastodon</a>
+    {% endif %}
+    {% if site.social.bluesky %}
+    <a href="{{ site.social.bluesky }}" class="sidebar__social-link" aria-label="Follow on Bluesky">Bluesky</a>
+    {% endif %}
+    {% if site.social.threads %}
+    <a href="{{ site.social.threads }}" class="sidebar__social-link" aria-label="Follow on Threads">Threads</a>
+    {% endif %}
+  </div>
+
+  <div class="sidebar__section">
+    <h4 class="sidebar__heading">Support Independent Journalism</h4>
+    <p class="sidebar__text">Help keep independent journalism alive and thriving. Your support ensures we can continue bringing you quality reporting without corporate influence.</p>
+    <a href="{{ site.donationUrl }}" class="sidebar__button sidebar__button--primary">Donate</a>
+  </div>
+
+  <div class="sidebar__section">
     <h4 class="sidebar__heading">Feeds</h4>
     <ul class="sidebar__list">
       <li class="sidebar__item"><a href="/feed.xml" class="sidebar__link">&#9741; All Articles</a></li>
@@ -30,5 +50,11 @@
       <li class="sidebar__item"><a href="/feed/opinion.xml" class="sidebar__link">&#9741; Opinion</a></li>
       <li class="sidebar__item"><a href="/feed/features.xml" class="sidebar__link">&#9741; Features</a></li>
     </ul>
+  </div>
+
+  <div class="sidebar__section sidebar__ad">
+    <div class="sidebar__ad-placeholder">
+      <span class="sidebar__ad-text">Advertisement</span>
+    </div>
   </div>
 </aside>
