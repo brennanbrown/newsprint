@@ -6,7 +6,7 @@ originalPublication: "The Evening Missourian"
 originalDate: 1920-08-26
 author: "United Press"
 category: "News"
-featured: true
+featured: false
 historicalNote: "Originally published in The Evening Missourian, August 26, 1920. Public domain. Via Chronicling America, Library of Congress."
 excerpt: "The women of America were today formally enfranchised. Secretary of State Colby at 8 o'clock this morning signed the proclamation which makes the suffrage amendment a part of the United States Constitution."
 ---

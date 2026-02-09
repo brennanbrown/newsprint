@@ -7,10 +7,18 @@
     "build": "npx @11ty/eleventy",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
-  "keywords": ["11ty", "eleventy", "newspaper", "blog", "rss", "newsletter"],
+  "keywords": [
+    "11ty",
+    "eleventy",
+    "newspaper",
+    "blog",
+    "rss",
+    "newsletter"
+  ],
   "license": "MIT",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-plugin-rss": "^1.2.0"
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "js-yaml": "^4.1.1"
   }
 }
