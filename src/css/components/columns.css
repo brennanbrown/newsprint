@@ -10,26 +10,7 @@
   -webkit-hyphens: auto;
 }
 
-/* Fallback for short articles - let them naturally fall to one column */
-@media (min-width: 769px) {
-  .article-page__body {
-    column-count: auto;
-    column-width: 25ch;
-  }
-}
-
 .article-page__body > * {
-  break-inside: avoid;
-}
-
-/* Allow lists to break across columns for better balance */
-.article-page__body ol,
-.article-page__body ul {
-  break-inside: auto;
-}
-
-/* Keep individual list items together */
-.article-page__body li {
   break-inside: avoid;
 }
 
@@ -44,14 +25,6 @@
 
 .article-page__body blockquote {
   column-span: all;
-}
-
-/* Horizontal rules should span both columns */
-.article-page__body hr {
-  column-span: all;
-  margin: var(--space-lg) 0;
-  border: none;
-  border-top: 1px solid var(--color-rule-light);
 }
 
 .article-page__body figure {
