@@ -4,18 +4,27 @@
 <meta name="description" content="{{ excerpt or site.description }}">
 <meta name="author" content="{{ author or site.author }}">
 
+<!-- Favicons -->
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="icon" href="/images/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/images/favicon/site.webmanifest">
+
 <!-- Open Graph -->
 <meta property="og:title" content="{{ title or site.title }}">
 <meta property="og:description" content="{{ excerpt or site.description }}">
 <meta property="og:type" content="{% if layout == 'layouts/article.njk' %}article{% else %}website{% endif %}">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-{% if image %}<meta property="og:image" content="{{ site.url }}{{ image }}">{% endif %}
+<meta property="og:image" content="{{ site.url }}{% if image %}{{ image }}{% else %}/images/screenshot.jpg{% endif %}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="675">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ title or site.title }}">
 <meta name="twitter:description" content="{{ excerpt or site.description }}">
-{% if image %}<meta name="twitter:image" content="{{ site.url }}{{ image }}">{% endif %}
+<meta name="twitter:image" content="{{ site.url }}{% if image %}{{ image }}{% else %}/images/screenshot.jpg{% endif %}">
 
 <!-- RSS -->
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">

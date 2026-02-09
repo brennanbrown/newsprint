@@ -31,6 +31,7 @@ module.exports = function(eleventyConfig) {
   // Pass through
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   // Custom filters
   eleventyConfig.addFilter("limit", function(arr, limit) {
@@ -45,6 +46,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("dateShort", function(date) {
     const options = { month: 'short', day: 'numeric', year: 'numeric' };
     return new Date(date).toLocaleDateString('en-US', options);
+  });
+
+  eleventyConfig.addFilter("dateYear", function(date) {
+    return new Date(date).getFullYear();
   });
 
   eleventyConfig.addFilter("dateISO", function(date) {
