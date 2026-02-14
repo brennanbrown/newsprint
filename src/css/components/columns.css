@@ -5,6 +5,7 @@
   column-count: 2;
   column-gap: var(--column-gap);
   column-rule: var(--column-rule);
+  column-fill: balance;
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -24,7 +25,8 @@
 }
 
 .article-page__body blockquote {
-  column-span: all;
+  margin: var(--space-xl) 0;
+  break-inside: avoid;
 }
 
 .article-page__body figure {
