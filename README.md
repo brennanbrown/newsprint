@@ -208,6 +208,6 @@ The theme includes SEO protection for demo sites. In `src/_data/site.json`, set 
 
 ## License
 
-MIT License - see LICENSE file for details.
+AGPL License - see LICENSE file for details.
 
 Content licensing is CC BY-SA 4.0 unless otherwise specified.
